@@ -73,6 +73,7 @@ else:
 
     if player_attack_amount < zombie_attack_amount:
         print(f'In {player_attack_amount} rondes versla je de zombie.')
+        player_health = (player_attack_amount * zombie_hit_damage)
         print(f'Je health is nu {player_health}.')
     else:
         print('Helaas is de zombie te sterk voor je.')
@@ -89,3 +90,4 @@ if player_key:
     print("Je opent de schatkist.")
 else:
     print("Maar je hebt geen sleutel!")
+    
