@@ -16,15 +16,22 @@ time.sleep(1)
 
 getal1 = random.randint(10,25)
 getal2 = random.randint(-5,75)
-operator = random.choice(+, -, *)
+operator = random.choice(["+", "-", "*"])
+
+if operator == "+":
+    som = getal1 + getal2 
+elif operator == "-":
+    som = getal1 - getal2
+else:
+    som = getal1 * getal2      
 
 print('Je stapt door de deur heen en je ziet een standbeeld voor je.')
 print('Het standbeeld heeft een sleutel vast.')
 print('Op zijn borst zit een numpad met de toesten 9 t/m 0.')
-print("Daarboven zie je een som staan {} + {} = ?".format(getal1, getal2))
+print("Daarboven zie je een som staan {} {} {} = ?".format(getal1, operator, getal2))
 antwoord = int(input('Wat toest je in?'))
 
-if antwoord == 26:
+if antwoord == som:
     print('Het stadbeeld laat de sleutel vallen en je pakt het op')
     player_key = True
 else:
@@ -35,8 +42,11 @@ print('')
 time.sleep(1)
 
 # === [kamer 3] === #
-item = 'schild'
-player_defense += 1
+item = random.choice(["schild", "zwaard"])
+if item == "schild":
+    player_defense += 1
+else:
+    player_attack += 2
 
 print('Je duwt hem open en stap een hele lange kamer binnen.')
 print(f'In deze kamer staat een tafel met daarop een {item}.')
@@ -75,3 +85,7 @@ time.sleep(1)
 print('Voorzichtig open je de deur, je wilt niet nog een zombie tegenkomen.')
 print('Tot je verbazig zie je een schatkist in het midden van de kamer staan.')
 print('Je loopt er naartoe.')
+if player_key:
+    print("Je opent de schatkist.")
+else:
+    print("Maar je hebt geen sleutel!")
