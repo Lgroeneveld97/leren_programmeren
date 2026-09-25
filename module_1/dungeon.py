@@ -6,56 +6,57 @@ player_health = 3
 player_key = False
 player_room = 1
 
-# === [kamer 1] === #
+if player_room == 1:
+    # === [kamer 1] === #
 
-print('Door de twee grote deuren loop je een gang binnen.')
-print('Het ruikt hier muf en vochtig.')
-print('Je ziet een deur voor je.')
-print('')
-time.sleep(1)
-player_room = 2
+    print('Door de twee grote deuren loop je een gang binnen.')
+    print('Het ruikt hier muf en vochtig.')
+    print('Je ziet een deur voor je.')
+    print('')
+    time.sleep(1)
+    player_room = 2
 
-# === [kamer 2] === #
+if player_room == 2:
+    # === [kamer 2] === #
 
-getal1 = random.randint(10,25)
-getal2 = random.randint(-5,75)
-operator = random.choice(["+", "-", "*"])
+    getal1 = random.randint(10,25)
+    getal2 = random.randint(-5,75)
+    operator = random.choice(["+", "-", "*"])
 
-if operator == "+":
-    som = getal1 + getal2 
-elif operator == "-":
-    som = getal1 - getal2
-else:
-    som = getal1 * getal2      
+    if operator == "+":
+        som = getal1 + getal2 
+    elif operator == "-":
+        som = getal1 - getal2
+    else:
+        som = getal1 * getal2      
 
-print('Je stapt door de deur heen en je ziet een standbeeld voor je.')
-print('Het standbeeld heeft een sleutel vast.')
-print('Op zijn borst zit een numpad met de toesten 9 t/m 0.')
-print("Daarboven zie je een som staan {} {} {} = ?".format(getal1, operator, getal2))
-antwoord = int(input('Wat toest je in?'))
+    print('Je stapt door de deur heen en je ziet een standbeeld voor je.')
+    print('Het standbeeld heeft een sleutel vast.')
+    print('Op zijn borst zit een numpad met de toesten 9 t/m 0.')
+    print("Daarboven zie je een som staan {} {} {} = ?".format(getal1, operator, getal2))
+    antwoord = int(input('Wat toest je in?'))
 
-if antwoord == som:
-    print('Het stadbeeld laat de sleutel vallen en je pakt het op')
-    player_key = True
-else:
-    print('Er gebeurt niets....')
+    if antwoord == som:
+        print('Het stadbeeld laat de sleutel vallen en je pakt het op')
+        player_key = True
+    else:
+        print('Er gebeurt niets....')
 
-print('Je zie twee deuren achter het standbeeld.')
-print('Welke deur kies je?', 
-      "A) Kamer 6", 
-      "B) Kamer 3", )
-keuze = input('? ')
+    print('Je zie twee deuren achter het standbeeld.')
+    print('Welke deur kies je?', 
+        "A Kamer 6", 
+        "B Kamer 3", )
+    keuze = input('? ')
 
-if keuze == 'b':
-    player_room = 3
-else:
-    player_room = 6
- 
-print('')
-time.sleep(1)
+    if keuze == 'b':
+        player_room = 3
+    else:
+        player_room = 6
+    
+    print('')
+    time.sleep(1)
 
 if player_room == 6:
-
     # === [kamer 6] === #
 
     zombie_attack = 1
@@ -65,12 +66,12 @@ if player_room == 6:
     print('Je loopt tegen een zombie aan.')
 
     zombie_hit_damage = (zombie_attack - player_defense)
-    
+        
     if zombie_hit_damage <= 0:
         print('Jij hebt een te goede verdedigign voor de zombie, hij kan je geen schade doen.')
     else:
         zombie_attack_amount = math.ceil(player_health / zombie_hit_damage)
-        
+            
         player_hit_damage = (player_attack - zombie_defense)
         player_attack_amount = math.ceil(zombie_health / player_hit_damage)
 
@@ -78,12 +79,13 @@ if player_room == 6:
             print(f'In {player_attack_amount} rondes versla je de zombie.')
             player_health = (player_attack_amount * zombie_hit_damage)
             print(f'Je health is nu {player_health}.')
+            player_room = 3
         else:
             print('Helaas is de zombie te sterk voor je.')
             print('Game over.')
-            exit()
-else:    
+            exit()    
 
+if player_room == 3:
     # === [kamer 3] === #
 
     item = random.choice(["schild", "zwaard"])
@@ -100,6 +102,7 @@ else:
     time.sleep(1)
     player_room = 4
 
+if player_room == 4:
     # === [kamer 4] === #
 
     vijand_attack = 2
@@ -131,6 +134,7 @@ else:
     time.sleep(1)
     player_room = 5
 
+if player_room == 5:
     # === [kamer 5] === #
 
     print('Voorzichtig open je de deur, je wilt niet nog een vijand tegenkomen.')
