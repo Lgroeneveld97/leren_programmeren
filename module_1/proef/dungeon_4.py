@@ -19,13 +19,22 @@ if player_room == 1:
 
 if player_room == 7:
     # === [kamer 7] === #
+
     print('Je loopt de kamer binnen.')
     print('Je ziet een rupee op de grond liggen en pakt deze op.')
     player_room += 1
-    print("Je ziet weer een deur voor je.")
+    print("Je ziet twee deuren voor je.")
+    print('Welke kamer ga je naar binnen?', 
+            "A Kamer 3", 
+            "B Kamer 2", )
+    keuze = input('? ')
+    if keuze == 'b':
+        player_room = 2
+    else:
+        player_room = 3
+    
     print('')
     time.sleep(1)
-    player_room = 2
 
 if player_room == 2:
     # === [kamer 2] === #
@@ -95,6 +104,9 @@ if player_room == 6:
             print('Helaas is de zombie te sterk voor je.')
             print('Game over.')
             exit()    
+
+    print('')
+    time.sleep(1)        
 
 if player_room == 3:
     # === [kamer 3] === #
