@@ -113,7 +113,18 @@ if player_room == 6:
         else:
             print('Helaas is de zombie te sterk voor je.')
             print('Game over.')
-            exit()    
+            exit()
+
+    print('Je zie weer twee deuren.')
+    print('Welke deur kies je?', 
+        "A Kamer 8", 
+        "B Kamer 3", )
+    keuze = input('? ')
+
+    if keuze == 'b':
+        player_room = 3
+    else:
+        player_room = 8    
 
     print('')
     time.sleep(1)        
@@ -146,17 +157,27 @@ if player_room == 8:
              print("Gefeliciteerd! Je hebt 1 rupee en 4 hp gekregen!")        
     else:
         print("Je negeert de gokmachine loopt naar de volgende deur.")
+
+    print('Je zie weer twee deuren.')
+    print('Welke deur kies je?', 
+        "A Kamer 9", 
+        "B Kamer 3", )
+    keuze = input('? ')
+
+    if keuze == 'b':
+        player_room = 3
+    else:
+        player_room = 9  
     
     print('')
     time.sleep(1)
-    player_room = 9
 
 if player_room == 9:
     # === [kamer 9] === #
 
     uitkomst = random.choice(["health", "defense"])
     print("Je loopt de kamer binnen.")
-    print("Er hangt hier ook een betoverende mist...")
+    print("Er hangt hier een betoverende mist.")
     print("...")
     time.sleep(2)
 
