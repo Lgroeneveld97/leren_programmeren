@@ -109,7 +109,6 @@ if player_room == 6:
             print(f'In {player_attack_amount} rondes versla je de zombie.')
             player_health = (player_attack_amount * zombie_hit_damage)
             print(f'Je health is nu {player_health}.')
-            player_room = 8
         else:
             print('Helaas is de zombie te sterk voor je.')
             print('Game over.')
