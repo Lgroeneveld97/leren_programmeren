@@ -1,5 +1,4 @@
 # variabelen
-wachtwoord = ""
 aantal_pogingen = 5
 pogingen = 0
 
@@ -11,13 +10,12 @@ while aantal_pogingen > 0:
         aantal_pogingen -= 1
         pogingen += 1
         if aantal_pogingen > 0:
-            print(f"Incorrect, u heeft nog {aantal_pogingen} pogingen over")
+            print(f"Incorrect, u heeft nog {aantal_pogingen} pogingen over.")
         else:
-            print("Te veel foute pogingen, je mag niet meer inloggen.")
-            exit()
+            print("Te veel foute pogingen, u mag niet meer inloggen.")
+            break
     else:
         aantal_pogingen = 0
         pogingen += 1
-        print(f"Correct! Juiste wachtwoord in {pogingen} pogingen")
-        exit()
-
+        print(f"Correct! Juiste wachtwoord in {pogingen} pogingen.")
+        break
