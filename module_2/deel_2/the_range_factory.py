@@ -1,8 +1,13 @@
+eerste_lijst = []
+lijst_nummer = 0
 lijstjes = int(input("Hoeveel lijstjes wilt u? "))
-lijstjes += 1 # Zodat de juiste aantal lijstjes worden gevraagd.
 
-for i in range(1,lijstjes):
-    lijst_lengte = int(input(f"Hoelang moet lijst {i} zijn? "))
+for i in range(lijstjes):
+    lijst_nummer = lijst_nummer + 1
+    tweede_lijst = []
+    lijst_lengte = int(input(f"Hoelang moet lijst {lijst_nummer} zijn? "))
+    for x in range(lijst_lengte):
+        tweede_lijst.append(x*lijst_nummer+lijst_nummer)
+    eerste_lijst.append(tweede_lijst)
 
-for i in range(lijst_lengte):
-    print(f"[{i}]")
+print(eerste_lijst)
