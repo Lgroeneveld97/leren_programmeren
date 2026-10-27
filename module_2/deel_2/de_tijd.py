@@ -1,4 +1,5 @@
 for x in range(1,13):
     print(x, "AM")
-    for y in range (1,13):
-        print(y, "PM")
+    if x >= 12:
+        for y in range (1,13):
+            print(y, "PM")
