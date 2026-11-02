@@ -16,13 +16,13 @@ random.shuffle(deck)
 
 n = 47
 
-kaarten = deck[n:]
-deck = deck[:n]
+for i in range(7):
+    kaarten = deck.pop(47)
 
 aantal_kaarten = len(deck)
 
 print(kaarten)
 
-print("") # Witregel voor betere leesbaarheid
+print() # Witregel voor betere leesbaarheid
 print(f"Deck ({aantal_kaarten} kaarten): {deck}")
-print("") # Witregel voor betere leesbaarheid
+print() # Witregel voor betere leesbaarheid
