@@ -4,6 +4,7 @@ kleuren = ["harten", "ruiten", "schoppen", "klaveren"]
 nummers = ["aas", "2", "3", "4", "5", "6", "7",
            "8", "9", "10", "boer", "vrouw", "heer"]
 deck = []
+kaarten = []
 
 for kleur in kleuren:
     for nummer in nummers:
@@ -14,10 +15,9 @@ deck.append("joker")
 
 random.shuffle(deck)
 
-n = 47
-
 for i in range(7):
-    kaarten = deck.pop(47)
+    kaart = deck.pop(0)
+    kaarten.append(kaart)
 
 aantal_kaarten = len(deck)
 
