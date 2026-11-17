@@ -1,26 +1,29 @@
 dagen = ("maandag", "dinsdag", "woensdag", "donderdag", "vrijdag", "zaterdag", "zondag")
 
-print() # Witregel voor betere leesbaarheid
+print()
 print("Alle dagen van de week zijn:")
-print() # Witregel voor betere leesbaarheid
+print()
 for dag in dagen:
-    print(f"{dag}, ", end="")
+    print(f"{dag}, ")
 
-print() # Witregel voor betere leesbaarheid
+print()
 print(f"De weekenddagen zijn: {dagen[5]} & {dagen[6]}.")
+print()
 
-print() # Witregel voor betere leesbaarheid
-for dag in dagen[4]:
-    print(f"De werkdagen zijn: {dagen[0]} ", end="")
+print("De werkdagen zijn:")
+for dag in dagen[0:5]:
+    print(f" - {dag}")
 
-print() # Witregel voor betere leesbaarheid
-print(f"Alle dagen van de week in omgekeerde volgorde zijn: {dagen[6]} -> {dagen[5]} -> {dagen[4]} -> {dagen[3]} -> {dagen[2]} -> {dagen[1]} -> {dagen[0]}.")
+print()
+print(f"Alle dagen van de week in omgekeerde volgorde zijn:")
+for dag in dagen[::-1]:
+    print(f" - {dag}")
 
-print() # Witregel voor betere leesbaarheid
+print()
 print("De werkdagen in omgekeerde volgorde zijn:")
 for dag in dagen[4::-1]:
-    print(f"- {dag}")
+    print(f" - {dag}")
 
-print() # Witregel voor betere leesbaarheid
+print()
 print(f"De weekenddagen in omgekeerde volgorde zijn: {dagen[6]} -> {dagen[5]}.")
-print() # Witregel voor betere leesbaarheid
+print()
